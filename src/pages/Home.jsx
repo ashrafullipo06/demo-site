@@ -1,6 +1,5 @@
 import HeroSection from "../components/home/HeroSection";
-import Navbar from "../components/navbar/Navbar";
-import Slider from "../components/home/Slider"
+import Services from "./Services";
 
 
 
@@ -9,7 +8,8 @@ const Home = () => {
         <div className="">
             {/* <Navbar/> */}
             <HeroSection/>
-            {/* <Slider/> */}
+            <Services/>
+            
         </div>
     );
 };
