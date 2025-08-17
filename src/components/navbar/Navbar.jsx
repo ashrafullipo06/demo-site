@@ -10,14 +10,14 @@ const Navbar = () => {
 
   return (
     <section className="py-6 flex justify-center bg-white">
-      <div className="w-full bg-[#F6F5F2] text-black h-[70px] rounded-2xl flex justify-between items-center gap-4 px-6 relative">
+      <div className="w-full bg-[#DDDDDD] text-black h-[70px] rounded-2xl flex justify-between items-center gap-4 px-6 relative">
         {/* Logo */}
         <div>
           <span className="text-[#a8ff53] text-2xl font-extrabold">
             &lt;/&gt;
           </span>{" "}
           <span className="bg-gradient-to-r text-black font-bold bg-clip-text text-2xl">
-            Lipo.Dev
+            LIPO
           </span>
         </div>
 
@@ -27,7 +27,9 @@ const Navbar = () => {
             (item, idx) => (
               <li key={idx}>
                 <NavLink
-                  to={`/${item.toLowerCase() === "home" ? "" : item.toLowerCase()}`}
+                  to={`/${
+                    item.toLowerCase() === "home" ? "" : item.toLowerCase()
+                  }`}
                   className={({ isActive }) =>
                     isActive ? "text-[#a8ff53]" : "text-gray-700"
                   }
@@ -42,7 +44,13 @@ const Navbar = () => {
         {/* Social icons always visible */}
         <ul className=" hidden md:flex md:gap-3 md:text-[25px]">
           <li>
-            <MdOutlineFacebook />
+            <a
+              href="https://www.facebook.com/Lipo.ashrafulhaque"
+              target="blank"
+              rel="noopener noreferrer"
+            >
+              <MdOutlineFacebook />
+            </a>
           </li>
           <li>
             <FaSquareXTwitter />
@@ -73,7 +81,9 @@ const Navbar = () => {
               (item, idx) => (
                 <NavLink
                   key={idx}
-                  to={`/${item.toLowerCase() === "home" ? "" : item.toLowerCase()}`}
+                  to={`/${
+                    item.toLowerCase() === "home" ? "" : item.toLowerCase()
+                  }`}
                   className={({ isActive }) =>
                     isActive ? "text-[#a8ff53]" : "text-gray-700"
                   }

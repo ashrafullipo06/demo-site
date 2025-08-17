@@ -8,7 +8,7 @@ const Services = () => {
 
       <div className="services-section grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
         {servicesData.map((service, index) => (
-          <div key={index} className="border p-4 rounded-lg shadow bg-[#F6F5F2] hover:shadow-lg transition">
+          <div key={index} className="border p-4 rounded-lg shadow bg-[#DDDDDD] hover:shadow-lg transition">
             <img src={service.img} alt={service.title} className="mx-auto mb-4 h-[100px]" />
             <h4 className="font-semibold text-lg">{service.title}</h4>
             <p className="text-sm mt-2">{service.description}</p>

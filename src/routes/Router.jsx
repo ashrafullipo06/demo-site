@@ -3,7 +3,7 @@ import Mainlayout from "../layouts/Mainlayout";
 import Home from "../pages/Home";
 import Services from "../pages/Services";
 import Contact from "../pages/Contact";
-
+import Portfolio from "../pages/Portfolio";
 
 const router = createBrowserRouter([
   {
@@ -11,16 +11,20 @@ const router = createBrowserRouter([
     element: <Mainlayout />,
     children: [
       {
-        path: "/",
-        element: <Home/>,
+        index: true,   // path="/" এর শর্টকাট
+        element: <Home />,
       },
       {
-        path: "/services",
-        element: <Services/>,
+        path: "services",
+        element: <Services />,
       },
       {
-        path: "/contact",
-        element:<Contact/>
+        path: "contact",
+        element: <Contact />,
+      },
+      {
+        path: "portfolio",
+        element: <Portfolio />,
       },
     ],
   },

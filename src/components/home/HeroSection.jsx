@@ -16,7 +16,7 @@ const HeroSection = () => {
 
   return (
     <div
-      className="px-4 py-6 mt-2 bg-[#F6F5F2] rounded-md"
+      className="px-4 py-6 mt-2 bg-[#DDDDDD] rounded-md"
       style={{
         boxShadow:
           "4px 0 6px -1px rgba(0,0,0,0.1), -4px 0 6px -1px rgba(0,0,0,0.1), 0 4px 6px -1px rgba(0,0,0,0.1)",
