@@ -1,3 +1,21 @@
+.continuousSwiper .swiper-wrapper {
+  display: flex;
+  width: calc(60px * 10); /* slide width * (number of slides * 2) */
+  animation: scrollLeft 5s linear infinite;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-60px * 5)); /* original slides এর width */
+  }
+}
+
+
+
+
 .swiper-button-prev {
     display: none;
 }
