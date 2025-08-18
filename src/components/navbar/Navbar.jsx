@@ -1,12 +1,29 @@
 import { useState } from "react";
 import { MdOutlineFacebook } from "react-icons/md";
-import { FaSquareXTwitter } from "react-icons/fa6";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { NavLink } from "react-router";
+import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
+
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setIsOpen(false);
+    }
+  };
+
+  const menuItems = [
+    "Home",
+    "Resume",
+    "Portfolio",
+    "Services",
+    "Contact",
+    "Blog",
+  ];
 
   return (
     <section className="py-6 flex justify-center bg-white">
@@ -23,37 +40,30 @@ const Navbar = () => {
 
         {/* Menu Desktop */}
         <ul className="hidden md:flex gap-8">
-          {["Home", "Resume", "Portfolio", "Services", "Contact", "Blog"].map(
-            (item, idx) => (
-              <li key={idx}>
-                <NavLink
-                  to={`/${
-                    item.toLowerCase() === "home" ? "" : item.toLowerCase()
-                  }`}
-                  className={({ isActive }) =>
-                    isActive ? "text-[#a8ff53]" : "text-gray-700"
-                  }
-                >
-                  {item}
-                </NavLink>
-              </li>
-            )
-          )}
+          {menuItems.map((item, idx) => (
+            <li
+              key={idx}
+              className="cursor-pointer"
+              onClick={() => scrollToSection(item.toLowerCase())}
+            >
+              {item}
+            </li>
+          ))}
         </ul>
 
-        {/* Social icons always visible */}
-        <ul className=" hidden md:flex md:gap-3 md:text-[25px]">
+        {/* Social icons */}
+        <ul className="hidden md:flex md:gap-3 md:text-[25px]">
           <li>
             <a
               href="https://www.facebook.com/Lipo.ashrafulhaque"
-              target="blank"
+              target="_blank"
               rel="noopener noreferrer"
             >
               <MdOutlineFacebook />
             </a>
           </li>
           <li>
-            <FaSquareXTwitter />
+             <FaTwitter />
           </li>
           <li>
             <FaLinkedin />
@@ -73,25 +83,16 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div
-            className="absolute top-[70px] right-0 bg-[#F6F5F2] w-48 shadow-lg rounded-lg p-4 flex flex-col gap-3 z-50"
-            onMouseLeave={() => setIsOpen(false)}
-          >
-            {["Home", "Resume", "Portfolio", "Services", "Contact", "Blog"].map(
-              (item, idx) => (
-                <NavLink
-                  key={idx}
-                  to={`/${
-                    item.toLowerCase() === "home" ? "" : item.toLowerCase()
-                  }`}
-                  className={({ isActive }) =>
-                    isActive ? "text-[#a8ff53]" : "text-gray-700"
-                  }
-                >
-                  {item}
-                </NavLink>
-              )
-            )}
+          <div className="absolute top-[70px] right-0 bg-[#F6F5F2] w-48 shadow-lg rounded-lg p-4 flex flex-col gap-3 z-50">
+            {menuItems.map((item, idx) => (
+              <div
+                key={idx}
+                className="cursor-pointer"
+                onClick={() => scrollToSection(item.toLowerCase())}
+              >
+                {item}
+              </div>
+            ))}
           </div>
         )}
       </div>

@@ -1,15 +1,20 @@
 import HeroSection from "../components/home/HeroSection";
 import Services from "./Services";
 
-
-
 const Home = () => {
     return (
-        <div className="">
-            {/* <Navbar/> */}
-            <HeroSection/>
-            <Services/>
-            
+        <div>
+            <section id="home">
+                <HeroSection />
+            </section>
+
+            <section id="services">
+                <Services />
+            </section>
+
+            {/* Future sections like Portfolio, Contact, Blog */}
+            {/* <section id="portfolio"><Portfolio/></section> */}
+            {/* <section id="contact"><Contact/></section> */}
         </div>
     );
 };
